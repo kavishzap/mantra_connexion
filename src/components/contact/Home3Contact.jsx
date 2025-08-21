@@ -6,6 +6,11 @@ import Marquee from "react-fast-marquee";
 function Home3Contact() {
   const [open, setOpen] = useState(false);
   const closeBtnRef = useRef(null);
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener("open-contact-modal", handler);
+    return () => window.removeEventListener("open-contact-modal", handler);
+  }, []);
 
   // Lock body scroll when the modal is open and focus the close button
   useEffect(() => {

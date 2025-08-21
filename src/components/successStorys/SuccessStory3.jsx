@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 import SwiperCore, { Autoplay, EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ModalVideo from "react-modal-video";
-
+import { FaPlay } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
@@ -142,7 +142,7 @@ function SuccessStory3() {
                       />
                       {/* Centered play icon */}
                       <span className="play-badge" aria-hidden>
-                        ▶
+                        <FaPlay />
                       </span>
                     </div>
 
@@ -253,7 +253,6 @@ function SuccessStory3() {
           pointer-events: none;
         }
 
-        /* Centered play icon */
         .play-badge {
           position: absolute;
           top: 50%;
@@ -268,7 +267,7 @@ function SuccessStory3() {
           justify-content: center;
           background: rgba(0, 0, 0, 0.55);
           color: #fff;
-          font-size: 22px;
+          font-size: 28px; /* bigger than before */
           line-height: 1;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35),
             inset 0 0 0 1px rgba(255, 255, 255, 0.25);

@@ -1,3 +1,4 @@
+// pages/index.jsx
 import About3 from "@/components/about/About3";
 import Banner3 from "@/components/bannner/Banner3";
 import Home3Contact from "@/components/contact/Home3Contact";
@@ -7,7 +8,6 @@ import Partner3 from "@/components/partner/Partner3";
 import Solution3 from "@/components/solutions/Solution3";
 import SuccessStory3 from "@/components/successStorys/SuccessStory3";
 import SuccessStory2 from "@/components/successStorys/SuccessStory2";
-import Testimonial3 from "@/components/testimonial/Testimonial3";
 import useBodyClass from "@/hooks/useBodyClass";
 import Head from "next/head";
 
@@ -24,18 +24,22 @@ export default function Home() {
       </Head>
 
       <Header3 />
-      <Banner3 />
-      <Partner3 />
-      <Solution3 />
-      <SuccessStory3 />
-      <SuccessStory2 />
-      <Home3Contact />
 
-      {/* <Testimonial3 />
-       */}
+      <section id="home" className="scroll-section"><Banner3 /></section>
+      <section id="partners" className="scroll-section"><Partner3 /></section>
+      <section id="solutions" className="scroll-section"><Solution3 /></section>
+      <section id="portfolio-1" className="scroll-section"><SuccessStory3 /></section>
+      <section id="portfolio-2" className="scroll-section"><SuccessStory2 /></section>
+      <section id="contact-cta" className="scroll-section"><Home3Contact /></section>
+      <section id="about" className="scroll-section"><About3 /></section>
 
-      <About3 />
       <Footer3 />
+
+      {/* offset for sticky header */}
+      <style jsx global>{`
+        .scroll-section { scroll-margin-top: 90px; } /* adjust to your sticky header height */
+        html { scroll-behavior: smooth; } /* native smooth scroll (kept even though we do manual offset) */
+      `}</style>
     </>
   );
 }

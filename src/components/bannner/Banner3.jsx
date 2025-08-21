@@ -8,6 +8,7 @@ import ModalVideo from "react-modal-video";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import { openContactModal } from "../../utils/contactModal";
 
 SwiperCore.use([Pagination, Autoplay, EffectFade]);
 function TypingOneLine({
@@ -284,9 +285,20 @@ function Banner3() {
           </p>
           <SocialLinks links={socialLinks} className="social-mobile mb-5" />
           <div className="banner-btn-group">
-            <Link legacyBehavior href="/contact">
-              <a className="primary-btn3">Free Consultancy</a>
-            </Link>
+            <div className="banner-btn-group">
+              {/* If you want to keep the Link look, just prevent default and open the modal */}
+              <Link legacyBehavior href="/contact">
+                <a
+                  className="primary-btn3"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openContactModal();
+                  }}
+                >
+                  Free Consultancy
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
 
